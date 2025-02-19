@@ -23,4 +23,4 @@ Falta integración de API, ajustes de interfaz de usuario y construcción de sis
 * En la pantalla de la actividad principal que aparece una vez iniciada sesión:
   - se puede optar por oprimir el icono de usuario que lleva al UserCardActivity
   - Se puede optar por oprimir encima de algun item para ir a UnitInfoActivity
-Tanto en UserCards como en UnitInfo existe una flecha en el appbar para devolverse
+* Tanto en UserCards como en UnitInfo existe una flecha en el appbar para devolverse
