@@ -1,0 +1,12 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.App_comp_movil" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:windowBackground">@color/blue_background_dk</item>
+        <item name="android:textColor">@color/normal_txt</item>
+        <item name="android:textColorHint">@color/normal_txt</item>
+    </style>
+
+    <style name="Theme.App_comp_movil" parent="Base.Theme.App_comp_movil" />
+</resources>

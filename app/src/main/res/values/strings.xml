@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">app_comp_movil</string>
+    str users
+    <string name="userName">nombre</string>
+    <string name="userMail">email</string>
+    <string name="userPassword">contraseña</string>
+    <string name="userPhone">teléfono</string>
+
+    str loggin
+    <string name="LogTitle">TechBlog</string>
+    <string name="btnLoggin">Ingresar</string>
+    <string name="btnLogCreateUser">Crear Cuenta</string>
+
+    str createUser
+    <string name="registerTitle">Ingresa tus datos!</string>
+    <string name="btnContinuar">Continuar</string>
+
+    str initialActivity
+    <string name="initialTitle">Últimos Lanzamientos</string>
+    <string name="cardTitle">Titulo producto</string>
+
+    str info
+    <string name="txtInfo">Info del producto</string>
+
+    str cards
+    <string name="cardsTitle">Tus Artículos Guardados!</string>
+</resources>
