@@ -15,3 +15,12 @@ de esta información dentro de su cuenta
 Falta integración de API, ajustes de interfaz de usuario y construcción de sistema de persistencia para cartas (entidad y dao).
 
 #### Quedo infinitamente agradecido por el tiempo y la atención y estoy atento a las correcciones pertinentes que deba ejecutar.
+
+
+## Modo de navegación.
+* Es necesario primero crear una cuenta, e la pantalla principal hay una opción que lleva a la pantalla de registro.
+* Si se vuelve a la pantalla inicial se puede ingresar con las credenciales registradas.
+* En la pantalla de la actividad principal que aparece una vez iniciada sesión:
+  - se puede optar por oprimir el icono de usuario que lleva al UserCardActivity
+  - Se puede optar por oprimir encima de algun item para ir a UnitInfoActivity
+Tanto en UserCards como en UnitInfo existe una flecha en el appbar para devolverse
