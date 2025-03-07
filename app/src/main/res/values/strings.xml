@@ -24,4 +24,9 @@
 
     str cards
     <string name="cardsTitle">Tus Artículos Guardados!</string>
+
+    str desc buttons
+    <string name="descButtonAssociate">Botón de asociación</string>
+    <string name="btn_delete_card">Botón de eliminar tarjeta</string>
+
 </resources>
