@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:padding="8dp"
+    android:background="@drawable/rounded_shape">
+
+    <!-- Contenedor principal con esquinas redondeadas -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/rounded_shape"
+        android:elevation="4dp"
+        android:clipToOutline="true">
+
+        <!-- Contenedor con fondo de borde y padding para la imagen -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="6dp"
+            android:background="@color/green_dk">
+
+            <!-- Imagen con espacio de borde -->
+            <ImageView
+                android:id="@+id/card_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:background="@drawable/ww_prueba"/>
+        </FrameLayout>
+
+        <!-- Botón en la esquina superior derecha -->
+        <ImageButton
+            android:id="@+id/associate_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="top|end"
+            android:layout_margin="8dp"
+            android:background="@null"
+            app:tint="@color/normal_txt"
+            android:scaleType="fitCenter"
+            android:src="@drawable/add_icn" />
+
+        <!-- Contenedor del título con fondo oscuro semitransparente -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:background="@color/blue_background_dk"
+            android:alpha="0.8"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/card_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Título"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </FrameLayout>
+
+</FrameLayout>
