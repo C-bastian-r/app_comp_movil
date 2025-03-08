@@ -59,16 +59,17 @@ public class UserDAO {
     private boolean loginUser(String email, String password){
         try{
             SQLiteDatabase sqLiteDatabase = dataBase.getReadableDatabase();
-            String query = "SELECT user_password, user_name FROM users WHERE user_email = ?";
+            String query = "SELECT user_id, user_password, user_name FROM users WHERE user_email = ?";
             Cursor cursor = sqLiteDatabase.rawQuery(query, new String[]{email});
             if (cursor.moveToFirst()){
-                String storedPassword = cursor.getString(0);
+                int userId = cursor.getInt(0);
+                String storedPassword = cursor.getString(1);
                 Log.i("dato password: ", storedPassword);
-                String userName = cursor.getString(1);
+                String userName = cursor.getString(2);
                 cursor.close();
 
                 if(securityModule.verifyPassword(password, storedPassword)){
-                    UserEntity user = new UserEntity(userName, email, password);
+                    UserEntity user = new UserEntity(userId, userName, email, password);
                     UserSesionManager.getInstance().setUserEntity(user);
                     return true;
                 }

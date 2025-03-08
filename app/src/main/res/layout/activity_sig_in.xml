@@ -8,18 +8,36 @@
     android:background="@color/blue_background_dk"
     tools:context=".Activities.SigInActivity">
 
+    <!-- Toolbar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/panel_dark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/top_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/panel_dark"
+            app:navigationIcon="@drawable/ic_action_back" />
+    </com.google.android.material.appbar.AppBarLayout>
+
     <EditText
         android:id="@+id/etSiginEmail"
         android:layout_width="320dp"
         android:layout_height="60dp"
+        android:autofillHints="@string/userMail"
         android:background="@drawable/rounded_shape"
         android:backgroundTint="@color/input"
         android:ems="10"
         android:hint="@string/userMail"
-        android:autofillHints="@string/userMail"
         android:inputType="textEmailAddress"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
+        android:textColor="@color/normal_txt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -44,14 +62,15 @@
         android:id="@+id/etSiginUserName"
         android:layout_width="320dp"
         android:layout_height="60dp"
+        android:autofillHints="@string/userName"
         android:background="@drawable/rounded_shape"
         android:backgroundTint="@color/input"
         android:ems="10"
         android:hint="@string/userName"
-        android:autofillHints="@string/userName"
         android:inputType="text"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
+        android:textColor="@color/normal_txt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -77,14 +96,15 @@
         android:id="@+id/etSiginPassword"
         android:layout_width="320dp"
         android:layout_height="60dp"
+        android:autofillHints="@string/userPassword"
         android:background="@drawable/rounded_shape"
         android:backgroundTint="@color/input"
         android:ems="10"
         android:hint="@string/userPassword"
-        android:autofillHints="@string/userPassword"
         android:inputType="textPassword"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
+        android:textColor="@color/normal_txt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"

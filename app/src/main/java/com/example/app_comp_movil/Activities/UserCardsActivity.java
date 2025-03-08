@@ -7,14 +7,35 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.app_comp_movil.Adapters.CardAdapter;
+import com.example.app_comp_movil.Adapters.CardsUserAdapter;
+import com.example.app_comp_movil.Model.DAOs.CardDAO;
+import com.example.app_comp_movil.Model.Entities.CardEntity;
+import com.example.app_comp_movil.Model.Entities.UserEntity;
 import com.example.app_comp_movil.R;
+import com.example.app_comp_movil.Utils.Navigation.IntentNavigator;
+import com.example.app_comp_movil.Utils.Sesions.UserSesionManager;
 import com.google.android.material.appbar.MaterialToolbar;
 
-public class UserCardsActivity extends AppCompatActivity {
+import java.util.List;
 
-    //En este activity se almacenarán datos de los articulos seleccionados por el usuario
-    //se almacenaran en la entidad cars y serán recuperados por el id del usuario
+public class UserCardsActivity extends AppCompatActivity implements CardsUserAdapter.OnCardClickListener{
+
+    private RecyclerView recyclerView;
+    private CardDAO cardDAO;
+    private UserEntity user;
+    private IntentNavigator navigator;
+
+    private void init(){
+        recyclerView = findViewById(R.id.recyclerView);
+        cardDAO = new CardDAO(this, findViewById(android.R.id.content));
+        user = UserSesionManager.getInstance().getUserEntity();
+        navigator = new IntentNavigator(this);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,5 +54,30 @@ public class UserCardsActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(v -> {
             onBackPressed();
         });
+
+        init();
+
+        List<CardEntity> cards = cardDAO.cardsFromUser(user.getUserId());
+        renderCards(cards);
+    }
+
+    private void renderCards(List<CardEntity> cards){
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        CardsUserAdapter adapter = new CardsUserAdapter(cards, this);
+        recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    public void onDeleteButtonClick(CardEntity card) {
+        cardDAO.deleteCard(card.getCardId());
+
+        List<CardEntity> updatedCards = cardDAO.cardsFromUser(user.getUserId());
+        renderCards(updatedCards);
+    }
+
+    @Override
+    public void onImageClick(CardEntity card) {
+        navigator.setIntenteNavCard(UnitInfoActivity.class, card);
     }
 }

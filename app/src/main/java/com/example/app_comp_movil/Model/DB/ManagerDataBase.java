@@ -8,9 +8,8 @@ import androidx.annotation.Nullable;
 
 public class ManagerDataBase extends SQLiteOpenHelper {
 
-
     private static final String DATA_BASE = "dbUser";
-    private static final int VERSION = 1;
+    private static final int VERSION = 2;
     private static final String TABLE_USER = "users";
     private static final String TABLE_CARD = "cards";
     private static final String QUERY_TABLE_USER = "CREATE TABLE "+TABLE_USER+
@@ -24,6 +23,7 @@ public class ManagerDataBase extends SQLiteOpenHelper {
             "(card_id INTEGER PRIMARY KEY, "+
             "card_title VARCHAR(150), "+
             "card_img VARCHAR(300), "+
+            "card_short_desc VARCHAR(500),"+
             "user_id INTEGER NOT NULL, "+
             "FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE );";
 
